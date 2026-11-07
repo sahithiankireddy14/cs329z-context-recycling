@@ -1,0 +1,23 @@
+{
+  "consensus_redundant": 153,
+  "file_view_groups": {
+    "changed_content_or_detected_edit": 14,
+    "exact_action_thought_response_observation": 21,
+    "same_observation_different_action_or_reasoning": 77,
+    "unchanged_overlap_but_different_observation": 10
+  },
+  "method": "Mutually exclusive evidence groups; changed content or confirmed edit takes precedence. Exact reasoning equality is stated text equality, not proof of waste. These are not human gold labels.",
+  "strict_match_adjacency": {
+    "adjacent": 7,
+    "nonadjacent": 14
+  },
+  "strict_match_open_calls": 8,
+  "strict_match_trajectories": 9,
+  "trajectories": 62,
+  "types": {
+    "command": 25,
+    "file_view": 122,
+    "search": 6
+  },
+  "version": 4
+}

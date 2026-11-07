@@ -1,0 +1,81 @@
+{
+  "candidate_count": 1545,
+  "comparison": {
+    "agreement_rate": 0.6621359223300971,
+    "cohen_kappa": 0.26903478766851385,
+    "confusion_matrix_left_rows_right_columns": {
+      "legitimate": {
+        "legitimate": 863,
+        "redundant": 24,
+        "verification": 24
+      },
+      "redundant": {
+        "legitimate": 248,
+        "redundant": 153,
+        "verification": 12
+      },
+      "verification": {
+        "legitimate": 202,
+        "redundant": 12,
+        "verification": 7
+      }
+    },
+    "left": {
+      "classifier": "jev-openrouter",
+      "cost_usd": 1.522198902,
+      "input_tokens": 36242831,
+      "label_counts": {
+        "legitimate": 911,
+        "redundant": 413,
+        "verification": 221
+      },
+      "mean_confidence": 0.46568932038834954,
+      "mean_latency_ms": 344.2451681393202,
+      "models": [
+        "typesafe/jev-1.14-20261014"
+      ],
+      "output_tokens": 72173
+    },
+    "limitation": "Agreement between automated classifiers is not accuracy without human labels.",
+    "n_shared": 1545,
+    "right": {
+      "classifier": "llm-openrouter",
+      "cost_usd": 3.34808416875,
+      "input_tokens": 36590448,
+      "label_counts": {
+        "legitimate": 1313,
+        "redundant": 189,
+        "verification": 43
+      },
+      "mean_confidence": 0.944168284789644,
+      "mean_latency_ms": 5582.969233923528,
+      "models": [
+        "mistralai/mistral-small-3.2-24b-instruct"
+      ],
+      "output_tokens": 286638
+    }
+  },
+  "consensus_audit": {
+    "consensus_redundant": 153,
+    "file_view_groups": {
+      "changed_content_or_detected_edit": 14,
+      "exact_action_thought_response_observation": 21,
+      "same_observation_different_action_or_reasoning": 77,
+      "unchanged_overlap_but_different_observation": 10
+    },
+    "method": "Mutually exclusive evidence groups; changed content or confirmed edit takes precedence. Exact reasoning equality is stated text equality, not proof of waste. These are not human gold labels.",
+    "strict_match_adjacency": {
+      "adjacent": 7,
+      "nonadjacent": 14
+    },
+    "strict_match_open_calls": 8,
+    "strict_match_trajectories": 9,
+    "trajectories": 62,
+    "types": {
+      "command": 25,
+      "file_view": 122,
+      "search": 6
+    },
+    "version": 4
+  }
+}

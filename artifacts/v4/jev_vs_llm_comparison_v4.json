@@ -1,0 +1,55 @@
+{
+  "agreement_rate": 0.6621359223300971,
+  "cohen_kappa": 0.26903478766851385,
+  "confusion_matrix_left_rows_right_columns": {
+    "legitimate": {
+      "legitimate": 863,
+      "redundant": 24,
+      "verification": 24
+    },
+    "redundant": {
+      "legitimate": 248,
+      "redundant": 153,
+      "verification": 12
+    },
+    "verification": {
+      "legitimate": 202,
+      "redundant": 12,
+      "verification": 7
+    }
+  },
+  "left": {
+    "classifier": "jev-openrouter",
+    "cost_usd": 1.522198902,
+    "input_tokens": 36242831,
+    "label_counts": {
+      "legitimate": 911,
+      "redundant": 413,
+      "verification": 221
+    },
+    "mean_confidence": 0.46568932038834954,
+    "mean_latency_ms": 344.2451681393202,
+    "models": [
+      "typesafe/jev-1.14-20261014"
+    ],
+    "output_tokens": 72173
+  },
+  "limitation": "Agreement between automated classifiers is not accuracy without human labels.",
+  "n_shared": 1545,
+  "right": {
+    "classifier": "llm-openrouter",
+    "cost_usd": 3.34808416875,
+    "input_tokens": 36590448,
+    "label_counts": {
+      "legitimate": 1313,
+      "redundant": 189,
+      "verification": 43
+    },
+    "mean_confidence": 0.944168284789644,
+    "mean_latency_ms": 5582.969233923528,
+    "models": [
+      "mistralai/mistral-small-3.2-24b-instruct"
+    ],
+    "output_tokens": 286638
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "started_at_utc": "2026-11-07T03:42:47.525137+00:00",
+  "tmux_session": "reread-v4",
+  "expected_candidates": 1545,
+  "candidate_file": "results/sweagent_full_candidates_v4.jsonl",
+  "candidate_sha256": "60dbfd8a2cb5bdc1c275eb8281fc8b6b21832d57318810c45b41f581f1d69a01",
+  "evidence_version": 4,
+  "rubric_version": 4,
+  "guidance": "Classify the usefulness of the current retrieval using the supplied trace evidence. For file views, content_unchanged refers only to shared numbered lines; inspect trajectory_evidence.line_delta and history_line_delta for new and changed lines. Partial overlap or ordinary navigation revealing useful new lines is not sufficient evidence of redundancy. Changed retrieved lines generally make the earlier read stale. Distinguish successful edits, failed edits, and unknown outcomes. An attempted edit alone does not establish a content change, and an edit outside the viewed region does not necessarily justify repeating the view. Consider thought/response text alongside actions and observations; identical wording is evidence of stated reasoning equality, not proof of unnecessary retrieval. The absence of an immediate edit alone does not prove redundancy. Use preceding/intervening events to assess context and following events as retrospective evidence of use; a distant later edit is not an immediate verification action. Missing or truncated observations and untracked shell effects are uncertainty, not proof that the environment stayed unchanged. ",
+  "criteria": {
+    "legitimate": "The retrieval supplies useful new information or changed content, or the trace supports a new purpose that makes the earlier observation insufficient.",
+    "verification": "The information is unchanged, but the agent immediately uses this retrieval to prepare an edit of the same target.",
+    "redundant": "The retrieval repeats already available unchanged information and the trace supports no useful new purpose or need to retrieve it again."
+  },
+  "first_returned_models": {
+    "jev": [
+      "typesafe/jev-1.14-20261014"
+    ],
+    "llm": [
+      "mistralai/mistral-small-3.2-24b-instruct"
+    ]
+  },
+  "results": "results/jev_vs_llm_comparison_v4.json",
+  "comparability_note": "Both context and rubric changed from v3; compare as revised methodology, not solely model improvement.",
+  "status": "complete",
+  "completion_verified_at_utc": "2026-11-07T04:04:22.971564+00:00",
+  "verified_predictions_per_classifier": 1545,
+  "missing_predictions": 0,
+  "duplicate_predictions": 0
+}

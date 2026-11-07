@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+tmp/
+*.py[cod]
+.env
+data/raw/
+data/processed/
+results/*
+!results/.gitkeep
+.DS_Store
+*.egg-info/
+build/
+dist/
+cs329z_project_proposal.pdf
+CS329Z_Midterm_Report*.pdf
