@@ -19,6 +19,7 @@ def main():
     for events in source.values():
         events.sort(key=lambda event: event['step'])
     counts, mutations, examples = Counter(), Counter(), {}
+    counts.update(file_views=0, searches=0, commands=0)
     for events in source.values():
         for event in events:
             if event['tool'] in {'edit_file', 'create_file'}:
@@ -33,6 +34,10 @@ def main():
                 raise ValueError(f"Incomplete or inconsistent context: {candidate['candidate_id']}")
             counts['complete_context_validated'] += 1
             evidence = candidate['evidence']
+            if candidate['match_type'] == 'search':
+                counts['searches'] += 1
+            elif candidate['match_type'] == 'command':
+                counts['commands'] += 1
             if candidate['match_type'] == 'file_view':
                 counts['file_views'] += 1
                 delta, history = evidence['line_delta'], evidence['history_line_delta']

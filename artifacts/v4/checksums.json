@@ -5,7 +5,7 @@
   "consensus_file_read_audit_v4.jsonl": "ad4b5559d7335926153d68f37be7accfda262d55466db5f44331ca0b847765c3",
   "consensus_redundant_candidates_v4.jsonl": "7612a0740fcfdcd1398eeb87d2f7bcc3dad2370e752b7d0552eda607bec511f5",
   "consensus_file_read_audit_v4_summary.json": "5ca1168f6f295d9cee92905167fe5de01f50902208225df0eee4a33558a7f02d",
-  "sweagent_full_evidence_v4_summary.json": "8413c7db8cb8b0462179a9e22fa7aed7b89fa1820adb3dba93c411c107e3dff1",
+  "sweagent_full_evidence_v4_summary.json": "27867f3b00b8346b85710ae6ae878dac71fa5b3ccf1db27f0a01a2e45335d7e0",
   "classifier_run_v4_manifest.json": "2e998081b67c4dda0f7940d19b77d81704e78126e2abf82e0c23a0f3bd869279",
   "results_v4.json": "1c235d1742bc75780fcd357fbe9d82823bccf0ada8eb3a488b69433d65aa718f"
 }

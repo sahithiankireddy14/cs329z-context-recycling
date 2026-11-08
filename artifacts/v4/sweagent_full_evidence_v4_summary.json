@@ -3,9 +3,11 @@
   "trajectories": 496,
   "events": 10330,
   "counts": {
+    "file_views": 585,
+    "searches": 98,
+    "commands": 862,
     "candidates": 1545,
     "complete_context_validated": 1545,
-    "file_views": 585,
     "file_views_with_new_lines_vs_previous": 289,
     "file_views_with_new_lines_vs_history": 284,
     "file_views_with_changed_shared_lines": 106,

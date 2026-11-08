@@ -7,7 +7,7 @@ c, a = r['comparison'], r['consensus_audit']
 text = r'''# Understanding context recycling in coding agents
 
 This project studies why coding agents re-read files, repeat searches, and rerun
-commands that retrieve information they have already seen—a behavior we call
+commands that retrieve information they have already seen, a behavior we call
 **context recycling**. We aim to distinguish useful repetition from redundant
 retrieval, deterime what causes agents to revisit information, and explore
 changes to agent harnesses that could reduce unnecessary
@@ -80,7 +80,10 @@ python scripts/audit_trajectory_evidence.py
 ```
 
 Expected: **10,330 events and 1,545 candidates**: 585 file views, 98 searches,
-and 862 commands. The candidate file is approximately 220 MB. Raw and processed
+and 862 commands. The audit prints these totals as `counts.file_views`,
+`counts.searches`, and `counts.commands`, and saves them in
+`results/sweagent_full_evidence_v4_summary.json`.
+The candidate file is approximately 220 MB. Raw and processed
 data are excluded by `.gitignore` and regenerated locally.
 
 Reproduce the consensus dataset and matching-evidence groups using saved labels:

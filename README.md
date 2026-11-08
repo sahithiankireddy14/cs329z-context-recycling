@@ -1,7 +1,7 @@
 # Understanding context recycling in coding agents
 
 This project studies why coding agents re-read files, repeat searches, and rerun
-commands that retrieve information they have already seen—a behavior we call
+commands that retrieve information they have already seen, a behavior we call
 **context recycling**. We aim to distinguish useful repetition from redundant
 retrieval, deterime what causes agents to revisit information, and explore
 changes to agent harnesses that could reduce unnecessary
@@ -74,7 +74,10 @@ python scripts/audit_trajectory_evidence.py
 ```
 
 Expected: **10,330 events and 1,545 candidates**: 585 file views, 98 searches,
-and 862 commands. The candidate file is approximately 220 MB. Raw and processed
+and 862 commands. The audit prints these totals as `counts.file_views`,
+`counts.searches`, and `counts.commands`, and saves them in
+`results/sweagent_full_evidence_v4_summary.json`.
+The candidate file is approximately 220 MB. Raw and processed
 data are excluded by `.gitignore` and regenerated locally.
 
 Reproduce the consensus dataset and matching-evidence groups using saved labels:
@@ -121,7 +124,7 @@ checkpoints predictions, retries transient errors, and creates
 interrupted identical experiment using the same directory. Use a new directory
 if the dataset, evidence, rubric, or model changes.
 
-Requested models: `typesafe/jev-1.14` and
+Requested models: `typesafe/jev-1.14` andx
 `mistralai/mistral-small-3.2-24b-instruct`. The original returned Jev model was
 `typesafe/jev-1.14-20261014`; returned models are saved per prediction.
 Both use the same evidence and rubric; Mistral uses temperature 0. Fresh API
@@ -149,18 +152,7 @@ Agreement: **66.21%**; Cohen's kappa: **0.269**. Consensus: **153** redundant la
 
 The 21 strict matches span 9 trajectories: 14 are nonconsecutive and 7 adjacent. Eight use `open`; the rest use `goto` or scrolling.
 
-Recorded cost: **$1.52 Jev + $3.35 Mistral = $4.87 total**.
 
-These are automated labels, not human-verified redundant actions.
-
-The four file-view evidence groups are produced by fixed rules in
-`scripts/summarize_classifier_results.py`, after selecting the cases that both
-models label redundant. The script checks for changed content or an intervening
-edit first, then checks exact matches in the recorded action, reasoning, response,
-and observation, followed by observation-only matches. Remaining cases have
-unchanged overlapping content but different observations. Each file view belongs
-to one group. This breakdown describes the evidence for repetition; it is not an
-additional model judgment or proof that a re-read was unnecessary.
 
 ## Evidence and interpretation
 

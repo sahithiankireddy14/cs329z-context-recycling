@@ -73,6 +73,8 @@ def verify(archive=Path('artifacts/v4')):
     evidence = read('sweagent_full_evidence_v4_summary.json')
     require((evidence['trajectories'], evidence['events'], evidence['counts']['candidates'])
             == (496, 10330, 1545), 'Report dataset totals differ.')
+    require(tuple(evidence['counts'][name] for name in ('file_views', 'searches', 'commands'))
+            == (585, 98, 862), 'Candidate type counts differ.')
     manifest = read('classifier_run_v4_manifest.json')
     require(manifest['status'] == 'complete'
             and manifest['verified_predictions_per_classifier'] == 1545
